@@ -1,10 +1,13 @@
 import React from 'react';
+import Header from './components/Header';
+import MainContainer from './components/MainContainer';
 
 const App = () => {
   return (
-    <div className='m-2 mx-4 p-2 flex justify-start items-center'>
-    <span className='text-black font-bold text-2xl'>YouTube </span>
-    </div>
+   <>
+   <Header/>
+   <MainContainer/>
+   </>
   )
 }
 
