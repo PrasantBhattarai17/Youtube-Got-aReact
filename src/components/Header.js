@@ -1,10 +1,17 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleMenu } from '../utils/menuSlice';
 
 const Header = () => {
+    const showMenu=useSelector((store)=>store.menuslice);
+    const dispatch=useDispatch();
+    const handleToggleMenu=()=>{
+     dispatch(toggleMenu());
+    };
   return (
     <div className='shadow grid grid-flow-col '>
     <div className='m-2 mx-4 p-2 col-span-1 flex justify-start items-center'>
-   <img className=' pr-10 h-6'alt='menu' src='https://cdn0.iconfinder.com/data/icons/rounded-basics/24/rounded__menu-512.png'/>
+   <img onClick={handleToggleMenu} className=' pr-10 h-6 cursor-pointer'alt='menu' src='https://cdn0.iconfinder.com/data/icons/rounded-basics/24/rounded__menu-512.png'/>
   <img className='h-6' alt='youtube-logo' src='https://upload.wikimedia.org/wikipedia/commons/3/34/YouTube_logo_%282017%29.png'/>
     </div>  
     <div className='col-span-9 flex items-center ml-28  p-1 m-1 '>
