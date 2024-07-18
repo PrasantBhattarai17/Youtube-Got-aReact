@@ -1,12 +1,16 @@
 import React from 'react';
 import VideoCard from './VideoCard';
+import useVideoDetails from '../hooks/useVideoDetails';
+import { useSelector } from 'react-redux';
+
 
 const VideoContainer = () => {
-  const views=[1,2,3,4,5,6,7,8,9,10,11];
-
-  return (
+    useVideoDetails();
+    const videos=useSelector((store)=>store.youtube.videoData);
+      if(!videos) return 
+   return (
     <div className='flex flex-wrap  justify-center '>
-   {views.map((view)=><VideoCard view={view}/>)}
+  {videos.map((video)=><VideoCard key={video.snippet.channelId} info={video}/>)}
   </div>
    )
 }
