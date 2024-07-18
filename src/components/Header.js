@@ -1,9 +1,8 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { toggleMenu } from '../utils/menuSlice';
 
 const Header = () => {
-    const showMenu=useSelector((store)=>store.menuslice);
     const dispatch=useDispatch();
     const handleToggleMenu=()=>{
      dispatch(toggleMenu());
