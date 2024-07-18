@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sidebar = () => {
   return (
-    <div className='w-1/12 text-center'>
+    <div className='w-2/12 text-center'>
       <div className='w-full shadow-lg h-22'>
       <h1></h1>
       <ul className=''>

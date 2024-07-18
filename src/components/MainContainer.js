@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 const MainContainer = () => {
   const showMenu=useSelector((store)=>store.menu.isMenu);
   return (
-  <div className='flex'>
+  <div className='flex '>
     {(showMenu) && <Sidebar/>}
     <BodyPage/>
   </div> 
