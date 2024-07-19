@@ -2,6 +2,7 @@ import React from 'react';
 import VideoCard from './VideoCard';
 import useVideoDetails from '../hooks/useVideoDetails';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const VideoContainer = () => {
@@ -10,7 +11,7 @@ const VideoContainer = () => {
       if(!videos) return 
    return (
     <div className='flex flex-wrap  justify-center '>
-  {videos.map((video)=><VideoCard key={video.snippet.channelId} info={video}/>)}
+   {videos.map((video)=><VideoCard key={video.snippet.channelId} info={video}/>)}
   </div>
    )
 }

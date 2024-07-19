@@ -1,31 +1,35 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div className='w-2/12 text-center'>
-      <div className='w-full shadow-lg h-22'>
+    <div className='w-[12%] text-center'>
+      <div className='w-full shadow-lg h-24'>
       <h1></h1>
       <ul className=''>
-        <li className='font-bold'>Home</li>
-        <li className='font-bold'>Shorts</li>
-        <li className='font-bold'>Videos</li>
+      <Link  to="/"> <li className='font-bold cursor-pointer'>Home</li></Link>
+        <li className='font-bold cursor-pointer'>Shorts</li>
+        <li className='font-bold cursor-pointer'>Subscriptions</li>
       </ul>
       </div >
-      <div className='w-full shadow-lg h-40 mt-3'>
-      <h1 className='font-bold'>Subscriptions</h1>
+      <div className='w-full shadow-lg h-56 mt-3'>
+      <h1 className='font-bold text-lg'>You</h1>
       <ul>
-        <li>Gaming</li>
-        <li>Music</li>
-        <li>Movies</li>
+        <li className='font-bold text-sm my-2'>Your Channel</li>
+        <li className='font-bold text-sm my-2'>History</li>
+        <li className='font-bold text-sm my-2'>Playlists</li>
+        <li className='font-bold text-sm my-2'>Your Videos</li>
+        <li className='font-bold text-sm my-2'>Watch Later</li>
+        <li className='font-bold text-sm my-2'>Liked Videos</li>
       </ul>
       </div>
       <div className='w-full shadow-lg h-40 mt-3'>
       <h1 className='font-bold'>Explore</h1>
       <ul>
-        <li>Trending</li>
-        <li>Music</li>
-        <li>Gaming</li>
-        <li>Sports</li>
+        <li  className='font-bold text-sm my-2'>Trending</li>
+        <li  className='font-bold text-sm my-2'>Music</li>
+        <li  className='font-bold text-sm my-2'>Gaming</li>
+        <li  className='font-bold text-sm my-2'>Sports</li>
       </ul>
       </div>
     </div>
