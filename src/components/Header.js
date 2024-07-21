@@ -3,6 +3,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { toggleMenu } from '../utils/menuSlice';
 import {YOUTUBE_SUGGESTION_API} from "../utils/constants"
 import { addSuggestions } from '../utils/searchSlice';
+import useFilterHook from '../hooks/usefilterHook';
 
 const Header = () => {
     const searchCache=useSelector((store)=>store.search);
@@ -39,6 +40,7 @@ const Header = () => {
     const handleToggleMenu=()=>{
      dispatch(toggleMenu());
     };
+    useFilterHook();
   return (
     <div className='shadow grid grid-flow-col '>
     <div className='m-2 mx-4 p-2 col-span-1 flex justify-start items-center'>
