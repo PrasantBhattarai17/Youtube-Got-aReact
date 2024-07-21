@@ -4,6 +4,7 @@ import { toggleMenu } from '../utils/menuSlice';
 import {YOUTUBE_SUGGESTION_API} from "../utils/constants"
 import { addSuggestions } from '../utils/searchSlice';
 import useFilterHook from '../hooks/usefilterHook';
+import { showFilterData } from '../utils/filterSlice';
 
 const Header = () => {
     const searchCache=useSelector((store)=>store.search);
@@ -52,7 +53,9 @@ const Header = () => {
     className='flex items-center'>
         <input  value={searchText} onChange={(e)=>setSearchText(e.target.value)}
         className='border-gray-600 border-2  py-2 w-[65%] rounded-l-full text-center' placeholder='Search'/>
-        <button className='border-2 border-l-0 border-gray-800 rounded-r-full py-2 w-12 bg-gray-200 hover:bg-gray-300'>🔍</button>
+        <button onClick={()=>{
+            dispatch(showFilterData())
+        }} className='border-2 border-l-0 border-gray-800 rounded-r-full py-2 w-12 bg-gray-200 hover:bg-gray-300'>🔍</button>
         </div>
         {(searchText)&&<div className='mx-2 absolute bg-white shadow border border-gray-200 w-[40%] rounded-xl'>
            <ul className='mx-4 text-md font-sans'>
