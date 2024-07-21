@@ -2,25 +2,33 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { toggleMenu } from '../utils/menuSlice';
 import {YOUTUBE_SUGGESTION_API} from "../utils/constants"
+import { addSuggestions } from '../utils/searchSlice';
 
 const Header = () => {
     const searchCache=useSelector((store)=>store.search);
   const [suggestions,setSuggestions]=useState([]);
-  const [showSuggestions,setShowSuggestions]=useState(false);
     const [searchText,setSearchText]=useState("");
     const dispatch=useDispatch();
 
         const getSuggestions= async()=>{
          const response=await fetch(YOUTUBE_SUGGESTION_API+searchText);
          const json=await response.json();
-         setSuggestions(json[1]);   
+         setSuggestions(json[1]);
+
+         dispatch(
+            (addSuggestions({ [searchText]:json[1]}))
+         )
         };
         
         
         useEffect(()=>{
            const timer= setTimeout(()=>{
-                getSuggestions();
-            },200);
+            if(searchCache[searchText])
+                setSuggestions(searchCache[searchText]);
+            else
+             getSuggestions();
+
+             },200);
 
             return()=>{
                 clearTimeout(timer);
@@ -38,8 +46,8 @@ const Header = () => {
  <a href='/'><img className='h-6 cursor-pointer' alt='youtube-logo' src='https://upload.wikimedia.org/wikipedia/commons/3/34/YouTube_logo_%282017%29.png'/></a>
 </div>  
     <div className='col-span-9  ml-28  p-1 m-1 '>
-        <div     onFocus={setShowSuggestions(true)}
-        onBlur={setShowSuggestions(false)} className='flex items-center'>
+        <div  
+    className='flex items-center'>
         <input  value={searchText} onChange={(e)=>setSearchText(e.target.value)}
         className='border-gray-600 border-2  py-2 w-[65%] rounded-l-full text-center' placeholder='Search'/>
         <button className='border-2 border-l-0 border-gray-800 rounded-r-full py-2 w-12 bg-gray-200 hover:bg-gray-300'>🔍</button>
