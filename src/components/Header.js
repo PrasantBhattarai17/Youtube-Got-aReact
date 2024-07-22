@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { toggleMenu } from '../utils/menuSlice';
+import { toggleMenu } from '../Store/menuSlice';
 import {YOUTUBE_SUGGESTION_API} from "../utils/constants"
-import { addSuggestions } from '../utils/searchSlice';
+import { addSuggestions } from '../Store/searchSlice';
 import useFilterHook from '../hooks/usefilterHook';
-import { showFilterData } from '../utils/filterSlice';
+import { showFilterData } from '../Store/filterSlice';
 
 const Header = () => {
     const searchCache=useSelector((store)=>store.search);

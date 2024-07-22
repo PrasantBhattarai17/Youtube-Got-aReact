@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import useRandomNames from '../hooks/useRandomNames';
-import useRandomMessages from '../hooks/useRandomMessages';
-import RandomNames from '../hooks/useRandomNames';
-import RandomMessages from '../hooks/useRandomMessages';
+import RandomNames from '../Helpers/useRandomNames';
+import RandomMessages from '../Helpers/useRandomMessages';
+import { useDispatch } from 'react-redux';
+import { addLiveMessages } from '../Store/messageSlice';
 const Messages = () => {
-
- const [name,setName]=useState("");
- const [messages,setMessages]=useState("");
+ const dispatch =useDispatch();
 
     useEffect(()=>{
 
  const timer=setInterval(() => {
-    const Name=RandomNames();
-    setName(Name)
-    const Messages=RandomMessages(15);
-    setMessages(Messages);
+  
+    
+ dispatch(addLiveMessages(
+    
+ ));
+
  },2000);
 
 

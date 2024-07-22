@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { YOUTUBE_API_KEY } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addVideos } from "../utils/youtubeSlice";
+import { addVideos } from "../Store/youtubeSlice";
 
 const useVideoDetails=()=>{
  const videoData=useSelector((store)=>store.youtube.videoData);

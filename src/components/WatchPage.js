@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { switchMenuOff } from '../utils/menuSlice';
+import { switchMenuOff } from '../Store/menuSlice';
 import useLikedVideos from '../hooks/useLikedVideos';
 import SuggestionCard from './SuggestionCard';
 import Messages from './Messages';

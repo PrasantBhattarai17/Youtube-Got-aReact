@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { YOUTUBE_SUGGESTION_API } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addSuggestions } from "../utils/searchSlice";
+import { addSuggestions } from "../Store/searchSlice";
 
 const useSuggestSearch=(searchTxt,setSearchText)=>{
 const searchCache=useSelector((store)=>store.search);

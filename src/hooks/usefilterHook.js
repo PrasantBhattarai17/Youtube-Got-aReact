@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFilterdata } from '../utils/filterSlice'; // Ensure correct path and action name
+import { addFilterdata } from '../Store/filterSlice'; // Ensure correct path and action name
 
 const useFilterHook = () => {
     const dispatch = useDispatch();
