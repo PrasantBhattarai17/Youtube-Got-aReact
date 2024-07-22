@@ -28,7 +28,7 @@ if(!videos) return;
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <div className='col-span-3 border-2 border-gray-200 shadow-xl mt-6 mr-2 bg-slate-100'>
+        <div className='col-span-3 border-2 border-gray-200 shadow-xl mt-6 mr-2 max-h-[580px] overflow-y-scroll bg-slate-100'>
           <span className=' mt-2 ml-4'>Live Chat</span>
           <Messages/>
         </div>
