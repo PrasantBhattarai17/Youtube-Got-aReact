@@ -19,7 +19,7 @@ const Messages = () => {
    }
  ));
 
- },2000);
+ },1500);
 
 
  return()=>{
@@ -30,7 +30,7 @@ const Messages = () => {
 
    
     return (
-      <div className='flex justify-end m-2 p-1 gap-x-2 items-center  flex-col-reverse'>
+      <>
       {chat.map((onechat, index) => (
         <div key={index} className='flex gap-x-4 my-2 items-center  w-full'>
           <img
@@ -42,7 +42,7 @@ const Messages = () => {
           <span>{onechat.messages}</span>
         </div>
       ))}
-    </div>
+    </>
     
   )
 }

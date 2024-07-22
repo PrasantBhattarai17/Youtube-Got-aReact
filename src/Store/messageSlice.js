@@ -8,6 +8,7 @@ const messageSlice=createSlice({
     },
     reducers:{
     addLiveMessages:(state,action)=>{
+        state.liveChats.splice(10,1);
         state.liveChats.push(action.payload);
     }
     }
