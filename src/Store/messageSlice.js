@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { OFFSET_LIVE_KEY } from "../utils/constants";
 
 const messageSlice=createSlice({
  
@@ -8,7 +9,7 @@ const messageSlice=createSlice({
     },
     reducers:{
     addLiveMessages:(state,action)=>{
-        state.liveChats.splice(10,1);
+        state.liveChats.splice(OFFSET_LIVE_KEY,1);
         state.liveChats.push(action.payload);
     }
     }

@@ -7,3 +7,4 @@ export const YOUTUBE_LIKED_KEY="https://youtube.googleapis.com/youtube/v3/videos
 
 
 export const YOUTUBE_SUGGESTION_API="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+export const OFFSET_LIVE_KEY=10;
